@@ -30,7 +30,7 @@ public class LoggerApplication {
 			LOGGER.trace(Thread.currentThread().getName());
 	
 		Thread.currentThread();
-		Thread.sleep(1000);;
+		Thread.sleep(5000);
 		
 		}
 	}

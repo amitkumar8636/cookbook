@@ -776,3 +776,8 @@
 2019-11-06 21:54:47.845  INFO 5104 --- [restartedMain] My Logger application                    : Application access the database
 2019-11-06 21:54:48.845  WARN 5104 --- [restartedMain] My Logger application                    : Max Connectional reached
 2019-11-06 21:54:49.846  INFO 5104 --- [restartedMain] My Logger application                    : Application access the database
+2019-11-06 22:06:03.134  INFO 8476 --- [main] com.cg.logger.LoggerApplicationTests     : Starting LoggerApplicationTests on DESKTOP-Amit with PID 8476 (started by Amit in C:\Users\Amit\git\cookbook_repo\logger)
+2019-11-06 22:06:03.134  INFO 8476 --- [main] com.cg.logger.LoggerApplicationTests     : The following profiles are active: dev
+2019-11-06 22:06:05.258  INFO 8476 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-06 22:06:05.713  INFO 8476 --- [main] com.cg.logger.LoggerApplicationTests     : Started LoggerApplicationTests in 3.167 seconds (JVM running for 4.974)
+2019-11-06 22:06:06.410  INFO 8476 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

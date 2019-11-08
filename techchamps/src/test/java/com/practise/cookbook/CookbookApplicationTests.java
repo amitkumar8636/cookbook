@@ -1,10 +1,10 @@
-package com.cg.logger;
+package com.practise.cookbook;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LoggerApplicationTests {
+class CookbookApplicationTests {
 
 	@Test
 	void contextLoads() {
