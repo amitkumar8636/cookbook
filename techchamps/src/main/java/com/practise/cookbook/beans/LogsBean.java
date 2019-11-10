@@ -20,7 +20,16 @@ public class LogsBean {
 	private String severity;
 	private String appname;
 	private String reason;
+	private String solution;
 	
+	
+	
+	public String getSolution() {
+		return solution;
+	}
+	public void setSolution(String solution) {
+		this.solution = solution;
+	}
 	public String getDate() {
 		return date;
 	}

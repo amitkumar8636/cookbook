@@ -49,15 +49,15 @@ public class ReportDaoImpl implements ReportDao {
 
 	@Override
 	public List<AllData> getAllData(LocalDate start, LocalDate endDate) {
-		LocalDate temp=start;
+		LocalDate temp=start.plusDays(1);
+		endDate= endDate.plusDays(1);
 		List<AllData> dataList = new ArrayList<AllData>();
 		while(temp.isBefore(endDate)) {
 //			LocalDate date = endDate.minusDays(i);
 			AllData a1 = new AllData();
 			a1.setTime(Utils1.getEpochmili(temp));
 			
-			final String url = "https://search-tech-champs-domain-ft4hwirv2uprpp4anl2ppkscim.us-east-1.es.amazonaws.com/myapp/_search?q=date:\""
-					+ temp + "\"&size=2000";
+			final String url = "https://search-log-analyzer-yhdzb4ndpow3jglggsgcxwqbee.us-east-1.es.amazonaws.com/analysis/_search?q=col_date:"+ temp +"&size=2000";
 			List<LogsBean> logbeans = makeApiRequest(url);
 			a1.setLogs(logbeans);
 			dataList.add(a1);
@@ -107,16 +107,18 @@ public class ReportDaoImpl implements ReportDao {
 		for (int i = 0; i < hits.size(); i++) {
 			JSONObject logdata = (JSONObject) ((JSONObject) hits.get(i)).get("_source");
 			LogsBean lb = new LogsBean();
+//			System.out.println();
 			lb.setAppname(logdata.get("appname").toString());
-			lb.setDate(logdata.get("date").toString());
+			lb.setDate(logdata.get("col_date").toString());
 			lb.setReason(logdata.get("reason").toString());
 			lb.setSeverity(logdata.get("severity").toString());
-			lb.setTime(logdata.get("time").toString());
+			lb.setTime(logdata.get("col_time").toString());
+			lb.setSolution(logdata.get("solution").toString().equals("null")?"Not Available":logdata.get("solution").toString());
 			lb.setTimestamp(Utils1.getEpochmili(LocalDate.parse(lb.getDate())));
 			System.out.println();
 //			lb.setTimestamp(Long.valueOf((logdata.get("timestamp").toString()).substring(0,10)));
 			logbeans.add(lb);
-			System.out.println(lb.getTimestamp());
+			
 
 		}
 
@@ -130,10 +132,11 @@ public class ReportDaoImpl implements ReportDao {
 //		List<Integer> counts = new ArrayList<>();
 //		List<String> severities = new ArrayList<>();
 		String ss[] = { "INFO", "DEBUG", "WARN", "ERROR", "FATAL" };
-		LocalDate temp = startDate;
+		LocalDate temp = startDate.plusDays(1);
+		endDate=endDate.plusDays(1);
 		while (temp.isBefore(endDate)) {
 			List<LogsBean> lbeans = makeApiRequest(
-					"https://search-tech-champs-domain-ft4hwirv2uprpp4anl2ppkscim.us-east-1.es.amazonaws.com/myapp/_search?q=date:\""
+					"https://search-log-analyzer-yhdzb4ndpow3jglggsgcxwqbee.us-east-1.es.amazonaws.com/analysis/_search?q=col_date:\""
 							+ temp + "\"&size=2000");
 			SevertyCountBean sb = new SevertyCountBean();
 			sb.setDate(Utils1.getEpochmili(temp));
