@@ -1,4 +1,4 @@
-package com.practise.cookbook.service.exception;
+package com.practise.cookbook.exception;
 /***
  * 
  * @author Amit Kumar

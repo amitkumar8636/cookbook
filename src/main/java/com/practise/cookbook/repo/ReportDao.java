@@ -1,4 +1,4 @@
-package com.practise.cookbook.service.repo;
+package com.practise.cookbook.repo;
 
 /**
  * 

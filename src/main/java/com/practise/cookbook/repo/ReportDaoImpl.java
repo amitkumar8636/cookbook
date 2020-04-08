@@ -1,4 +1,4 @@
-package com.practise.cookbook.service.repo;
+package com.practise.cookbook.repo;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -13,8 +13,8 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.practise.cookbook.beans.Login;
-import com.practise.cookbook.service.exception.ErrorMessages;
-import com.practise.cookbook.service.exception.ProgramException;
+import com.practise.cookbook.exception.ErrorMessages;
+import com.practise.cookbook.exception.ProgramException;
 
 /**
  * 

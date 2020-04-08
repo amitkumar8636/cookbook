@@ -1,4 +1,4 @@
-package com.practise.cookbook.service.exception;
+package com.practise.cookbook.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,4 +1,4 @@
-package com.practise.cookbook.service.exception;
+package com.practise.cookbook.exception;
 
 import java.time.LocalDateTime;
 import org.springframework.http.HttpStatus;

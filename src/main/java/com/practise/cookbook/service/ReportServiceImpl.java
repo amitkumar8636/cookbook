@@ -3,7 +3,7 @@ package com.practise.cookbook.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.practise.cookbook.service.repo.ReportDao;
+import com.practise.cookbook.repo.ReportDao;
 
 /**
  * 
